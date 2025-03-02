@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>畫畫備忘錄</title>
+    <link rel="stylesheet" href="drawing-notes-css-complete.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+    <h1 class="title">🎨 畫畫備忘錄 ✍️</h1>
+
+    <!-- 筆記區 -->
+    <div class="note-container">
+        <input type="text" id="noteTitle" placeholder="筆記標題...">
+        <textarea id="noteContent" placeholder="輸入你的筆記（支援 Markdown 格式）..."></textarea>
+        <div id="preview" class="markdown-preview"></div>
+    </div>
+
+    <!-- 畫圖區 -->
+    <div class="canvas-container">
+        <h2>🖌 手繪區</h2>
+        <canvas id="drawingCanvas"></canvas>
+        <div class="toolbar">
+            <label>🎨 顏色: <input type="color" id="colorPicker" value="#000000"></label>
+            <label>🖋 筆刷大小: <input type="range" id="brushSize" min="1" max="20" value="3"></label>
+            <button id="clearCanvasBtn">🗑 清除畫布</button>
+        </div>
+    </div>
+
+    <!-- 上傳圖片區 -->
+    <div class="upload-container">
+        <h2>📷 圖片上傳</h2>
+        <input type="file" id="imageUpload" accept="image/*">
+        <div id="imagePreview"></div>
+    </div>
+
+    <!-- 標籤輸入區 -->
+    <div class="tag-container">
+        <h2>🏷️ 標籤</h2>
+        <div class="tag-input-group">
+            <input type="text" id="tagInput" placeholder="輸入標籤（#標籤1 #標籤2）">
+            <button id="addTagBtn">新增標籤</button>
+        </div>
+        <div id="currentTags" class="current-tags"></div>
+    </div>
+
+    <!-- 儲存按鈕 -->
+    <div class="buttons">
+        <button id="saveNoteBtn">💾 儲存筆記</button>
+        <button id="clearNoteBtn">🗑 清除筆記</button>
+    </div>
+
+    <!-- 標籤過濾 -->
+    <div class="filter-container">
+        <h2>🔍 依標籤搜尋</h2>
+        <div id="tagFilters" class="tag-filters"></div>
+    </div>
+
+    <!-- 已儲存筆記 -->
+    <div class="saved-notes-container">
+        <h2>📂 已儲存的筆記</h2>
+        <div id="savedNotes" class="note-grid"></div>
+    </div>
+
+     <!-- 匯出功能 -->
+    <div class="export-container">
+        <h2>📤 匯出筆記</h2>
+        <button id="exportJSONBtn">📂 下載 JSON</button>
+        <button id="exportMarkdownBtn">📄 下載 Markdown</button>
+    </div>
+
+    <!-- 添加JavaScript文件引用 -->
+    <script src="drawing-notes-js.js"></script>
+</body>
+</html>
